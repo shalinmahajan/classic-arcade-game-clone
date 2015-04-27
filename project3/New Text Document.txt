@@ -1,0 +1,37 @@
+Added following Objects, Classes, Methods
+Class : Enemy,Player, Gems
+Object: allEnemies,player, gems
+Variables: score, life
+Methods for Class Player: 
+	update: To keep the player within the defined limits of canvas
+	render: To display the player on canvas
+	reset: On collision of player with enemies, will reset the
+                                 position of player and score to 0
+	life: On reaching water level, life to be increased and
+         	        player moved to start position
+	handleInput: Defined the movement of player on canvas by
+                            taking the input from user 
+
+Methods for Class Enemy : 
+	update: To keep the enemy within the defined limits of canvas and run them
+	 at a constant speed multiplier (dt) which will ensure the game runs at the same 
+	speed for all computers.Also used a function providing random multiplier for the
+	 variation in speed of different enemies.
+	render: To display the enemy on canvas
+	reset: On collision of player with enemies, will reset the
+                                 position of enemy back to start position
+	
+Methods for Class Gems:
+	update: To keep the gems within the defined limits of canvas
+	render: To display the gems on canvas. Also show different gems at different scores
+	               (for score<1000, Blue Gems, score<2500 Green Gems, score >2500 Orange gems)
+	               Also shows the score, life and player name on Canvas.
+	reset: On collision of player with gems, will place the gems at random
+                                 position and increase the value of score by 100
+	
+Function in engine.js
+	gemsCollection: When player collects gems, then reset method of Gems is called.
+	
+	checkCollision: when player collides with enemy, then reset function is called , checks for 
+		           life value, if it is more than 0 then decreases it by 1, if the value of life is 0, then
+		           show the "Game Over " message.
